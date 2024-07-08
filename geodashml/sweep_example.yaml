@@ -1,0 +1,23 @@
+program: train.py
+method: bayes
+metric:
+    name: avg_reward
+    goal: maximize
+parameters:
+    discount:
+        min: 0.01
+        max: 0.95        
+    exploration_rate:
+        min: 0.0
+        max: 0.9
+    decay_factor:
+        min: 0.9
+        max: 0.9999
+    learning_rate:
+        min: 0.0001
+        max: 0.1
+    episode:
+        min: 50
+        max: 1000
+    hide_browser:
+        value: 1

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>test page</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <form name="f1" action="">
+                <input name="q" id="q" value="">
+                <input type="button" id="b" value="gonder">
+            </form>
+        </div>
+    </body>
+    <script>
+        $(document).on("keypress", function(e) {
+            $('#q').val(e.keyCode);
+        });
+
+    </script>
+</html>
