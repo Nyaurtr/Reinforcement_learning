@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from PIL import Image
 import io
 import numpy as np
@@ -33,7 +35,7 @@ class environment:
         self.browser_options = webdriver.ChromeOptions()
         if self.config['hide_browser']:
             self.browser_options.add_argument('headless')
-        self.browser_driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", chrome_options=self.browser_options)
+        self.browser_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=self.browser_options)
         self.browser_wait = WebDriverWait(self.browser_driver,timeout=20)
 
         self.browser_driver.get('https://scratch.mit.edu/projects/105500895/embed')
