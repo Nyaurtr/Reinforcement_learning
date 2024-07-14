@@ -9,4 +9,4 @@ def train():
         e.end()
 
 
-wandb.agent('hakanonal/geodashml/t9y4f52z',function=train)    
+wandb.agent('bestkatavn8-FFilm/geodashml/5kyomeqj',function=train)    

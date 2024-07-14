@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from PIL import Image
 import io
 import numpy as np
@@ -39,8 +41,8 @@ class environment:
         self.browser_wait = WebDriverWait(self.browser_driver,timeout=20)
 
         self.browser_driver.get('https://scratch.mit.edu/projects/105500895/embed')
-        self.browser_wait.until(lambda d: d.find_element_by_css_selector(".green-flag_green-flag_1kiAo"))
-        flag_element = self.browser_driver.find_element_by_css_selector(".green-flag_green-flag_1kiAo")
+        self.browser_wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".green-flag_green-flag_1kiAo")))
+        flag_element = self.browser_driver.find_element(By.CSS_SELECTOR, ".green-flag_green-flag_1kiAo")
         time.sleep(1)
         flag_element.click()
         time.sleep(5)

@@ -4,7 +4,7 @@ import numpy as np
 import cv2  # OpenCV for rendering
 
 def test_agent(env, agent, episodes):
-    agent.load("geometry_dash_dqn.weights.h5")
+    agent.load("./GeometryDashRL/geometry_dash_dqn.weights.h5")
 
     for e in range(episodes):
         state = env.reset()
